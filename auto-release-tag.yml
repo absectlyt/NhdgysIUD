@@ -30,14 +30,3 @@ jobs:
           DOCKER_TOKEN: ${{secrets.DOCKERHUB_PASSWD}}
         run: docker login -u $DOCKER_USER -p $DOCKER_TOKEN
 
-      - name: Push router Docker image
-        run: docker push juspaydotin/orca:${{ github.ref_name }}
-
-      - name: Push consumer Docker image
-        run: docker push juspaydotin/orca-consumer:${{ github.ref_name }}
-
-      - name: Push producer Docker image
-        run: docker push juspaydotin/orca-producer:${{ github.ref_name }}
-
-      - name: Push drainer Docker image
-        run: docker push juspaydotin/orca:drainer-${{ github.ref_name }}
